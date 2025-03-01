@@ -1,0 +1,7 @@
+- hosts: app_server
+  become: true
+  vars:
+    app_repo_url: "https://github.com/azayyad48/DevOps-Stage-4"  # Verify this
+  roles:
+    - dependencies
+    - deployment

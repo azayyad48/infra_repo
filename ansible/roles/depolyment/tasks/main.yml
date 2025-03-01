@@ -1,0 +1,9 @@
+- name: Clone the TODO App repository
+  git:
+    repo: "https://github.com/azayyad48/app-repo.git"
+    dest: "/opt/todo-app"
+
+- name: Start the application with Docker Compose
+  command: docker-compose up -d
+  args:
+    chdir: /opt/todo-app

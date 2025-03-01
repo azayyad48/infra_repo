@@ -1,0 +1,19 @@
+- name: Update package cache
+  apt:
+    update_cache: yes
+
+- name: Install required dependencies
+  apt:
+    name:
+      - curl
+      - unzip
+      - git
+      - docker.io
+      - docker-compose
+    state: present
+
+- name: Enable and start Docker
+  systemd:
+    name: docker
+    enabled: yes
+    state: started
